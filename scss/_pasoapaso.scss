@@ -1,19 +1,44 @@
 .container__paso-a-paso {
     height: 200px;
     margin: auto;
-    background-image: url(../img/img-beneficios.png) ;
+    background-image: url(../img/img-beneficios.png);
     background-size: cover;
     background-repeat: no-repeat;
 
 
-    .contenido{
+    .contenido {
         padding-top: 20%;
         color: white;
         text-shadow: 3px 3px 5px black;
 
-        a{
+        a {
             @extend .contenido;
             text-decoration: none;
         }
+    }
+}
+
+.header-pasoapaso {
+    height: 40px;
+    border-bottom: 1px solid black;
+
+    li {
+        float: left;
+        list-style: none;
+
+        margin: 0 10px;
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+
+}
+
+.pasoapasohtml {
+    h4 {
+        color: #c3a492;
+        
     }
 }
