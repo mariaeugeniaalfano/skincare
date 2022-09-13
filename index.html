@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
     <title>SKINCARE</title>
 </head>
 
@@ -14,30 +21,25 @@
 
     </header>
     <main>
-        <div class="encabezado">
-            <h1><u>SKINCARE</u></h1>
-            <h2>Rutina de cuidado facial</h2>
-            <ul>
-                <li>Skincare +</li>
-                <li>Productos +</li>
-            </ul>
-        </div>
-
-        <div class="categorias">
-            <div class="categorias__texto">
-                <h3>Cuidado facial</h3>
-                <p>Independientemente de la edad, el ambiente o la contaminación, la rutina diaria y la exposición solar
-                    pueden afectar nuestra piel y acelerar los signos de la piel envejecida, reseca y sin vida.</p>
-            </div>
-            <div class="beneficios">
-                <img src="img/img-beneficios.png" alt="">
-                <h3>Paso a paso </h3>
-                <p>+</p>
-            </div>
-            <div class="productos">
-                <img src="img/img-productos.png" alt="">
-                <h3>Productos</h3>
-                <p>+</p>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-sm container__texto">
+                    <h4>Cuidado Facial</h4>
+                    <p>Una limpieza diaria, pero suave, y un buen cuidado hidratante ayudarán a mantener tu piel sana
+                    </p>
+                </div>
+                <div class="col-sm container__paso-a-paso">
+                    <div class="contenido">
+                        <h4>Paso a paso</h4>
+                        <a href="pages/paso-a-paso.html">+</a>
+                    </div>
+                </div>
+                <div class="col-sm container__productos">
+                    <div class="contenido">
+                        <h4>Productos</h4>
+                        <a href="pages/productos.html">+</a>
+                    </div>
+                </div>
             </div>
         </div>
     </main>

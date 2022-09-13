@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container__texto {
+  padding-top: 10px;
+}
+
+.container__paso-a-paso {
+  margin: auto;
+  height: 200px;
+  width: 200px;
+  background-image: url(../img/img-beneficios.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 20px 0 20px;
+}
+.container__paso-a-paso .contenido, .container__productos .contenido .container__paso-a-paso a, .container__paso-a-paso .contenido a {
+  padding-top: 20%;
+  color: white;
+  text-shadow: 3px 3px 5px black;
+}
+.container__paso-a-paso .contenido a, .container__productos .contenido .container__paso-a-paso a a {
+  text-decoration: none;
+}
+
+.container__productos {
+  margin: auto;
+  height: 200px;
+  width: 200px;
+  background-image: url(../img/img-productos.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.container__productos .contenido, .container__productos .contenido a, .container__paso-a-paso .contenido .container__productos a {
+  padding-top: 20%;
+  color: white;
+  text-shadow: 3px 3px 5px black;
+}
+.container__productos .contenido a, .container__paso-a-paso .contenido .container__productos a a {
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style.css.map */
