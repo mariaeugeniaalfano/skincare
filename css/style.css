@@ -4,18 +4,32 @@
   box-sizing: border-box;
 }
 
+.header {
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-image: url(../img/img-header2.png);
+}
+.header h1 {
+  text-align: center;
+  padding-top: 60px;
+  color: white;
+  text-shadow: 3px 3px 5px black;
+}
+
 .container__texto {
-  padding-top: 10px;
+  height: 200px;
+  padding-top: 50px;
 }
 
 .container__paso-a-paso {
-  margin: auto;
   height: 200px;
-  width: 200px;
+  margin: auto;
   background-image: url(../img/img-beneficios.png);
   background-size: cover;
   background-repeat: no-repeat;
-  margin: 0 20px 0 20px;
 }
 .container__paso-a-paso .contenido, .container__productos .contenido .container__paso-a-paso a, .container__paso-a-paso .contenido a {
   padding-top: 20%;
@@ -27,9 +41,8 @@
 }
 
 .container__productos {
-  margin: auto;
   height: 200px;
-  width: 200px;
+  margin: auto;
   background-image: url(../img/img-productos.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -41,6 +54,11 @@
 }
 .container__productos .contenido a, .container__paso-a-paso .contenido .container__productos a a {
   text-decoration: none;
+}
+
+body {
+  max-width: 900px;
+  margin: auto;
 }
 
 /*# sourceMappingURL=style.css.map */
