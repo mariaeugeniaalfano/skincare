@@ -11,15 +11,33 @@
 @import "productos";
 @import "variables";
 
-body{
+body {
     max-width: 900px;
     margin: auto;
 }
 
 /* MEDIA QUERYS */
 @media screen and (min-width: 576px) {
-    .container{
+    .container {
         margin-top: 20px;
 
     }
+
+    .container__paso-a-paso {
+        height: 300px;
+        margin: auto;
+
+    }
+
+    .container__productos {
+        height: 300px;
+        margin: auto;
+
+    }
+    .container__texto {   
+        height: 300px;
+        padding-top: 80px;
+    
+    }
+
 }

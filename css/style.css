@@ -87,6 +87,18 @@ body {
   .container {
     margin-top: 20px;
   }
+  .container__paso-a-paso {
+    height: 300px;
+    margin: auto;
+  }
+  .container__productos {
+    height: 300px;
+    margin: auto;
+  }
+  .container__texto {
+    height: 300px;
+    padding-top: 80px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
