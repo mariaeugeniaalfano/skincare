@@ -53,6 +53,9 @@
   text-decoration: none;
   color: black;
 }
+.header-pasoapaso li a:hover {
+  color: grey;
+}
 
 .body-img {
   background-image: url(../img/img-header.png);
@@ -88,6 +91,13 @@
 }
 .container__productos .contenido a, .container__paso-a-paso .contenido .container__productos a a {
   text-decoration: none;
+}
+
+.body-img {
+  background-image: url(../img/img-header.png);
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
 }
 
 body {

@@ -1,3 +1,4 @@
+//EN HOME
 .container__productos {
     height: 200px;
     margin: auto;
@@ -15,4 +16,13 @@
             text-decoration: none;
         }
     }
+}
+
+//PAGINA
+.body-img {
+    background-image: url(../img/img-header.png);
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+
 }
