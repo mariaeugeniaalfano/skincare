@@ -42,23 +42,24 @@
 
 .header-pasoapaso {
   height: 40px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
 }
 .header-pasoapaso li {
   float: left;
   list-style: none;
+  color: white;
   margin: 0 10px;
 }
 .header-pasoapaso li a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 .header-pasoapaso li a:hover {
   color: grey;
 }
 
 .body-img {
-  background-image: url(../img/img-header.png);
+  background-image: url(../img/bg-pasoapaso.png);
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
@@ -75,6 +76,9 @@
   margin: 20px 0;
   background-color: rgba(255, 255, 255, 0.8);
   color: black;
+}
+.pasoapasohtml .col-xs-12 {
+  padding-top: 20px;
 }
 
 .container__productos {
@@ -121,6 +125,9 @@ body {
   .container__texto {
     height: 300px;
     padding-top: 80px;
+  }
+  .body-img {
+    background-attachment: fixed;
   }
 }
 

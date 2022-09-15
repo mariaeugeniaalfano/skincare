@@ -21,18 +21,19 @@
 
 .header-pasoapaso {
     height: 40px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
 
     li {
         float: left;
         list-style: none;
-
+        color: white;
         margin: 0 10px;
 
         a {
             text-decoration: none;
-            color: black;
-            &:hover{
+            color: white;
+
+            &:hover {
                 color: grey;
             }
         }
@@ -43,7 +44,7 @@
 
 //PAGINA
 .body-img {
-    background-image: url(../img/img-header.png);
+    background-image: url(../img/bg-pasoapaso.png);
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
@@ -66,5 +67,8 @@
         color: black;
     }
 
+    .col-xs-12 {
+        padding-top: 20px;
+    }
 
 }
