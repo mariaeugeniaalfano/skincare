@@ -54,11 +54,16 @@
   color: black;
 }
 
-.pasoapasohtml h4 {
-  color: #c3a492;
+.pasoapasohtml {
+  text-align: center;
 }
-.pasoapasohtml .col {
-  margin: 20px 0;
+.pasoapasohtml h4 {
+  color: black;
+  font-size: 2rem;
+}
+.pasoapasohtml .col-xs-6 {
+  padding: 20px;
+  border-bottom: 1px solid gray;
 }
 
 .container__productos {

@@ -1,3 +1,4 @@
+//EN HOME
 .container__paso-a-paso {
     height: 200px;
     margin: auto;
@@ -36,12 +37,21 @@
 
 }
 
+//PAGINA
 .pasoapasohtml {
+    text-align: center;
+
     h4 {
-        color: #c3a492;
-        
+        color: black;
+        font-size: 2rem;
+
     }
-    .col{
-        margin: 20px 0;
+
+    .col-xs-6 {
+     padding: 20px;
+    border-bottom: 1px solid gray ;
+
     }
+
+
 }
