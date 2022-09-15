@@ -62,7 +62,7 @@
   background-image: url(../img/bg-pasoapaso.png);
   background-attachment: fixed;
   background-position: center center;
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -102,7 +102,7 @@
   background-image: url(../img/bg-pasoapaso.png);
   background-attachment: fixed;
   background-position: center center;
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -127,9 +127,6 @@ body {
   .container__texto {
     height: 300px;
     padding-top: 80px;
-  }
-  .body-img {
-    background-attachment: fixed;
   }
 }
 
