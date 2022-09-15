@@ -70,16 +70,14 @@
   text-align: center;
 }
 .pasoapasohtml h4 {
-  color: black;
+  color: white;
   font-size: 2rem;
+  padding-top: 10px;
 }
 .pasoapasohtml .col-xs-6 {
-  margin: 20px 0;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: black;
-}
-.pasoapasohtml .col-xs-12 {
-  padding-top: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-bottom: 1px solid grey;
 }
 
 .container__productos {
