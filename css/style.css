@@ -54,6 +54,13 @@
   color: black;
 }
 
+.body-img {
+  background-image: url(../img/img-header.png);
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
+
 .pasoapasohtml {
   text-align: center;
 }
@@ -62,7 +69,9 @@
   font-size: 2rem;
 }
 .pasoapasohtml .col-xs-6 {
-  padding: 20px;
+  margin: 20px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
 }
 
 .container__productos {
