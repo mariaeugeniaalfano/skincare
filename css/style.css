@@ -26,6 +26,7 @@
 
 .video {
   text-align: center;
+  background-image: url(../img/img-header2.png);
 }
 
 .container__paso-a-paso {
@@ -132,6 +133,10 @@ body {
   }
   .body-img {
     background-image: url(../img/bg-pasoapaso.png);
+  }
+  .video {
+    margin-top: 20px;
+    padding: 20px;
   }
 }
 
