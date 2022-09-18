@@ -1,72 +1,65 @@
 //EN HOME
 .container__paso-a-paso {
-    height: 200px;
-    margin: auto;
-    background-image: url(../img/img-beneficios.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+  height: 200px;
+  margin: auto;
+  background-image: url(../img/img-beneficios.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 
+  .contenido {
+    padding-top: 20%;
+    color: white;
+    text-shadow: 3px 3px 5px black;
 
-    .contenido {
-        padding-top: 20%;
-        color: white;
-        text-shadow: 3px 3px 5px black;
-
-        a {
-            @extend .contenido;
-            text-decoration: none;
-        }
+    a {
+      @extend .contenido;
+      text-decoration: none;
     }
+  }
 }
 
 .header-pasoapaso {
-    height: 40px;
-    border-bottom: 1px solid white;
+  height: 40px;
+  border-bottom: 1px solid white;
 
-    li {
-        float: left;
-        list-style: none;
-        color: white;
-        margin: 0 10px;
+  li {
+    float: left;
+    list-style: none;
+    color: white;
+    margin: 0 10px;
 
-        a {
-            text-decoration: none;
-            color: white;
+    a {
+      text-decoration: none;
+      color: white;
 
-            &:hover {
-                color: grey;
-            }
-        }
-
+      &:hover {
+        color: grey;
+      }
     }
-
+  }
 }
 
 //PAGINA
 .body-img {
-    background-image: url(../img/bg-pasoapaso-sm.png);
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
+  background-image: url(../img/bg-pasoapaso-sm.png);
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .pasoapasohtml {
+  text-align: center;
 
-    text-align: center;
+  h4 {
+    color: white;
+    font-size: 2rem;
+    padding-top: 10px;
+  }
 
-    h4 {
-        color: white;
-        font-size: 2rem;
-        padding-top: 10px;
-
-    }
-
-    .col-xs-6 {
-        background-color: rgba(000, 000, 000, 0.7);
-        color: white;
-border-bottom: 1px solid grey;
-    }
-
+  .col-xs-6 {
+    background-color: rgba(000, 000, 000, 0.7);
+    color: white;
+    border-bottom: 1px solid grey;
+  }
 }

@@ -24,6 +24,10 @@
   padding-top: 30px;
 }
 
+.video {
+  text-align: center;
+}
+
 .container__paso-a-paso {
   height: 200px;
   margin: auto;
