@@ -5,29 +5,32 @@ const SUMA = precio * cantidad;
 
 debugger
 while (producto != "ESC") {
+
+    producto = prompt("Escriba el nombre del producto que desea llevar. Tenemos disponible : Limpiador facial, Exfoliante, Tonico, Serum, Crema Hidratante y Protector Solar. Para salir escriba ´ESC´");
+
     switch (producto) {
         case "Limpiador facial":
             precio = 1240;
             alert("Usted eligió: Limpiador Facial. Su valor es de $" + precio);
             cantidad = parseInt(prompt("¿Cuantos desea comprar?"));
             alert("el total es $" + (precio * cantidad));
-            confirm ("¿Desea seguir comprando?");
+            confirm("¿Desea seguir comprando?");
             break;
 
         case "Exfoliante":
             precio = 1120;
             alert("Usted eligió: Exfoliante. Su valor es de $" + precio)
             cantidad = parseInt(prompt("¿Cuantos desea comprar?"));
-            alert("el total es $" + (precio * cantidad));            
-            confirm ("¿Desea seguir comprando?");
+            alert("el total es $" + (precio * cantidad));
+            confirm("¿Desea seguir comprando?");
             break;
 
         case "Tonico":
             precio = 1450;
             alert("Usted eligió: Tonico. Su valor es de $" + precio)
             cantidad = parseInt(prompt("¿Cuantos desea comprar?"));
-            alert("el total es $" + (precio * cantidad));            
-            confirm ("¿Desea seguir comprando?");
+            alert("el total es $" + (precio * cantidad));
+            confirm("¿Desea seguir comprando?");
             break;
 
         case "Serum":
@@ -35,7 +38,7 @@ while (producto != "ESC") {
             alert("Usted eligió: Serum . Su valor es de $" + precio)
             cantidad = parseInt(prompt("¿Cuantos desea comprar?"));
             alert("el total es $" + (precio * cantidad));
-            confirm ("¿Desea seguir comprando?");
+            confirm("¿Desea seguir comprando?");
             break;
 
         case "Crema Hidratante":
@@ -43,7 +46,7 @@ while (producto != "ESC") {
             alert("Usted eligió: Crema Hidratante . Su valor es de $" + precio)
             cantidad = parseInt(prompt("¿Cuantos desea comprar?"));
             alert("el total es $" + (precio * cantidad));
-            confirm ("¿Desea seguir comprando?");
+            confirm("¿Desea seguir comprando?");
             break;
 
         case "Protector Solar":
@@ -51,7 +54,7 @@ while (producto != "ESC") {
             alert("Usted eligió: Protector Solar . Su valor es de $" + precio)
             cantidad = parseInt(prompt("¿Cuantos desea comprar?"));
             alert("el total es $" + (precio * cantidad));
-            confirm ("¿Desea seguir comprando?");
+            confirm("¿Desea seguir comprando?");
             break;
 
         default:
