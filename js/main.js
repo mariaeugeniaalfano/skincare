@@ -1,14 +1,17 @@
-debugger;
+//debugger;
 let producto;
 let precio;
 let cantidad;
 let suma;
+let sumaTotal = 0;
 const SALIR = "esc";
 
-function compra() {
+function compra(precio, producto) {
+    alert("Usted eligió:" + producto + ". Su valor es de $" + precio);
     cantidad = parseInt(prompt("¿Cuantos desea comprar?"));
     suma = precio * cantidad;
     alert("el total es $" + suma);
+    sumaTotal += suma;
 }
 
 while (producto != SALIR) {
@@ -21,57 +24,27 @@ while (producto != SALIR) {
             break;
 
         case "limpiador facial":
-            precio = 1240;
-            alert("Usted eligió: Limpiador Facial. Su valor es de $" + precio);
-            //   cantidad = parseInt(prompt("¿Cuantos desea comprar?"));
-            //   suma = precio * cantidad;
-            //   alert("el total es $" + suma);
-            compra();
+            compra(1240, 'limpiador facial');
             break;
 
         case "exfoliante":
-            precio = 1120;
-            alert("Usted eligió: Exfoliante. Su valor es de $" + precio);
-            // cantidad = parseInt(prompt("¿Cuantos desea comprar?"));
-            // suma = precio * cantidad;
-            // alert("el total es $" + suma);
-            compra();
+            compra(1120, 'exfoliante');
             break;
 
         case "tonico":
-            precio = 1450;
-            alert("Usted eligió: Tonico. Su valor es de $" + precio);
-            // cantidad = parseInt(prompt("¿Cuantos desea comprar?"));
-            // suma = precio * cantidad;
-            // alert("el total es $" + suma);
-            compra();
+            compra(1450, 'tonico');
             break;
 
         case "serum":
-            precio = 1050;
-            alert("Usted eligió: Serum . Su valor es de $" + precio);
-            // cantidad = parseInt(prompt("¿Cuantos desea comprar?"));
-            // suma = precio * cantidad;
-            // alert("el total es $" + suma);
-            compra();
+            compra(1050, 'serum');
             break;
 
         case "crema hidratante":
-            precio = 1400;
-            alert("Usted eligió: Crema Hidratante . Su valor es de $" + precio);
-            // cantidad = parseInt(prompt("¿Cuantos desea comprar?"));
-            // suma = precio * cantidad;
-            // alert("el total es $" + suma);
-            compra();
+            compra(1400, 'crema hidratante');
             break;
 
         case "protector solar":
-            precio = 2500;
-            alert("Usted eligió: Protector Solar . Su valor es de $" + precio);
-            // cantidad = parseInt(prompt("¿Cuantos desea comprar?"));
-            // suma = precio * cantidad;
-            // alert("el total es $" + suma);
-            compra();
+            compra(2500, 'protector solar');
             break;
 
         default:
@@ -81,7 +54,11 @@ while (producto != SALIR) {
 
     let result = confirm("¿Desea seguir comprando?");
     if (!result) {
+        alert("la suma acumulada al momento es: " + sumaTotal);
         alert("¡Gracias por su compra!")
         break;
     }
+
+
+
 }
