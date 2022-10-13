@@ -82,7 +82,15 @@
 .pasoapasohtml .col-xs-6 {
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
-  border-bottom: 1px solid grey;
+  border-radius: 5px;
+}
+
+.my-auto {
+  padding: 10px;
+}
+
+img {
+  border-radius: 5px;
 }
 
 .container__productos {
