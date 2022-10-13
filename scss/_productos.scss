@@ -27,3 +27,19 @@
      background-repeat: no-repeat;
 
 }
+
+.productos{
+    .container{
+        .card{
+            img{
+                margin: auto;
+                height: 300px;
+                width: 200px;
+            }
+            .btn{
+                border-color: #C9A0DC ;
+            }
+        }
+    }
+}
+
