@@ -27,7 +27,7 @@ function compra(precio, producto) {
   );
   cantidadProductos = parseInt(prompt("¿Cuantos desea comprar?"));
   suma = precio * cantidadProductos;
-  alert("El total por " + cantidadProductos + " es de $" + suma);
+  alert("El total por " + cantidadProductos + " " + producto + " es de $" + suma);
   sumaTotal += suma;
 }
 
@@ -106,7 +106,7 @@ while (producto != SALIR) {
           "Producto seleccionado: " +
             ARRAY_PRODUCTOS[i].nombre.toUpperCase() +
             "." +
-            "\nLa suma total de la compra es de : $" +
+            "\n\n✅La suma TOTAL de la compra es de : $" +
             sumaTotal
         );
       }
