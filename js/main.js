@@ -1,4 +1,4 @@
-// debugger;
+// variables
 let producto;
 let precio;
 let cantidadProductos;
@@ -6,6 +6,8 @@ let suma;
 let sumaTotal = 0;
 const SALIR = "esc";
 
+
+//clase que pasa nombre y precio
 class Producto {
   constructor(nombre, precio) {
     this.nombre = nombre;
@@ -13,8 +15,12 @@ class Producto {
   }
 }
 
-const ARRAY_PRODUCTOS = []; //funcionara cuando usemos DOM
 
+//array que carga los productos seleccionados
+const ARRAY_PRODUCTOS = []; 
+
+
+//funcion para pedir producto y calcular total
 function compra(precio, producto) {
   alert(
     "Usted eligió: " + producto + ". El valor del producto es de $" + precio
@@ -25,9 +31,11 @@ function compra(precio, producto) {
   sumaTotal += suma;
 }
 
+
+//while con switch que carga productos seleccionados al array
 while (producto != SALIR) {
   producto = prompt(
-    "Escriba el nombre del producto que desea llevar. Tenemos disponible : Limpiador facial, Exfoliante, Tonico, Serum, Crema Hidratante y Protector Solar. Para salir escriba ´ESC´"
+    "Escriba el nombre del producto que desea llevar. Tenemos disponible : \n*Limpiador facial \n*Exfoliante \n*Tonico \n*Serum \n*Crema Hidratante \n*Protector Solar. \nPara salir escriba ´ESC´"
   ).toLowerCase();
 
   switch (producto) {
@@ -87,32 +95,22 @@ while (producto != SALIR) {
       break;
   }
 
+
+  //if que confirma si usuario quiere salir y devuelve array + cantidad a abonar
   if (producto != SALIR) {
     let result = confirm("¿Desea seguir comprando?");
 
     if (!result) {
       for (let i = 0; i <= ARRAY_PRODUCTOS.length; i++) {
         alert(
-          "Usted compró: " +
-            ARRAY_PRODUCTOS[i].nombre +
+          "Producto seleccionado: " +
+            ARRAY_PRODUCTOS[i].nombre.toUpperCase() +
             "." +
-            "La suma acumulada al momento es: $" +
+            "\nLa suma total de la compra es de : $" +
             sumaTotal
         );
       }
-
-      alert("¡Gracias por su compra!");
-      break;
     }
   }
 }
 
-// function buscador(buscarProducto) {
-//   confirm("¿Encontraste lo que buscabas?");
-//   let result = alert("¿Que buscabas?");
-//   if (!result) {
-//     let productoBuscado = prompt("bla");
-//   }
-// }
-
-// buscador();
