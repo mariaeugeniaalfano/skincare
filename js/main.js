@@ -1,3 +1,38 @@
+let botonLimpiador = document.getElementById("id_limpiador");
+let botonExfoliante = document.getElementById("id_exfoliante");
+let botonTonico = document.getElementById("id_tonico");
+let botonSerum = document.getElementById("id_serum");
+let botonCremHidra = document.getElementById("id_cremahidratante");
+let botonProtectSolar = document.getElementById("id_protectorsolar");
+
+function llamado(boton) {
+  boton.addEvenLisstener("click", )
+}
+
+botonLimpiador.addEvenLisstener("Click", ) = () => {
+  console.log("seleccionaste limpiador");
+};
+
+botonExfoliante.onclick = () => {
+  console.log("seleccionaste exfoliante");
+};
+
+botonTonico.onclick = () => {
+  console.log("seleccionaste tonico");
+};
+
+botonSerum.onclick = () => {
+  console.log("seleccionaste serum");
+};
+
+botonCremHidra.onclick = () => {
+  console.log("seleccionaste Crema Hidratante");
+};
+
+botonProtectSolar.onclick = () => {
+  console.log("seleccionaste Protector Solar");
+};
+
 // variables
 let producto;
 let precio;
@@ -5,7 +40,6 @@ let cantidadProductos;
 let suma;
 let sumaTotal = 0;
 const SALIR = "esc";
-
 
 //clase que pasa nombre y precio
 class Producto {
@@ -15,10 +49,8 @@ class Producto {
   }
 }
 
-
 //array que carga los productos seleccionados
-const ARRAY_PRODUCTOS = []; 
-
+const ARRAY_PRODUCTOS = [];
 
 //funcion para pedir producto y calcular total
 function compra(precio, producto) {
@@ -27,10 +59,11 @@ function compra(precio, producto) {
   );
   cantidadProductos = parseInt(prompt("¿Cuantos desea comprar?"));
   suma = precio * cantidadProductos;
-  alert("El total por " + cantidadProductos + " " + producto + " es de $" + suma);
+  alert(
+    "El total por " + cantidadProductos + " " + producto + " es de $" + suma
+  );
   sumaTotal += suma;
 }
-
 
 //while con switch que carga productos seleccionados al array
 while (producto != SALIR) {
@@ -95,7 +128,6 @@ while (producto != SALIR) {
       break;
   }
 
-
   //if que confirma si usuario quiere salir y devuelve array + cantidad a abonar
   if (producto != SALIR) {
     let result = confirm("¿Desea seguir comprando?");
@@ -113,4 +145,3 @@ while (producto != SALIR) {
     }
   }
 }
-

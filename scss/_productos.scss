@@ -1,45 +1,60 @@
 //EN HOME
 .container__productos {
-    height: 200px;
-    margin: auto;
-    background-image: url(../img/img-productos.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+  height: 200px;
+  margin: auto;
+  background-image: url(../img/img-productos.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 
-    .contenido{
-        padding-top: 20%;
-        color: white;
-        text-shadow: 3px 3px 5px black;
-        
-        a{
-            @extend .contenido;
-            text-decoration: none;
-        }
+  .contenido {
+    padding-top: 20%;
+    color: white;
+    text-shadow: 3px 3px 5px black;
+
+    a {
+      @extend .contenido;
+      text-decoration: none;
     }
+  }
 }
 
 //PAGINA
 .body-img {
-     background-image: url(../img/bg-pasoapaso-sm.png);
-     background-attachment: fixed;
-     background-position: center center;
-     background-size: cover;
-     background-repeat: no-repeat;
-
+  background-image: url(../img/bg-pasoapaso-sm.png);
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.productos{
-    .container{
-        .card{
-            img{
-                margin: auto;
-                height: 300px;
-                width: 200px;
-            }
-            .btn{
-                border-color: #C9A0DC ;
-            }
-        }
+.productos {
+  .container {
+    .card {
+      img {
+        margin: auto;
+        height: 300px;
+        width: 200px;
+      }
+      .btn {
+        border-color: #c9a0dc;
+      }
     }
+  }
 }
 
+input {
+  width: 2rem;
+  text-align: center;
+  display: flex;
+  margin: auto;
+  border-radius: 5px;
+  border-color: #c9a0dc;
+}
+
+button {
+  margin-top: 10px;
+}
+
+.importe {
+  font-size: 2rem;
+}

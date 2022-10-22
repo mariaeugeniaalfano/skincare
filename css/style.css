@@ -123,7 +123,24 @@ img {
   width: 200px;
 }
 .productos .container .card .btn {
-  border-color: #C9A0DC;
+  border-color: #c9a0dc;
+}
+
+input {
+  width: 2rem;
+  text-align: center;
+  display: flex;
+  margin: auto;
+  border-radius: 5px;
+  border-color: #c9a0dc;
+}
+
+button {
+  margin-top: 10px;
+}
+
+.importe {
+  font-size: 2rem;
 }
 
 body {
