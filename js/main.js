@@ -160,37 +160,36 @@ function verProductosEnChanguito() {
 }
 
 
-
+//Comprar
 function comprarLosProductos() {
   dataStorage = JSON.parse(localStorage.getItem("carrito"));
-  
+
   if (dataStorage !== null) {
     let sumatoriaTotalProductos = 0;
     let mensajeGenerado = "Comprar los siguientes productos:\n";
 
     for (let i = 0; i < dataStorage.length; i++) {
-
-
       mensajeGenerado += "\n" + dataStorage[i].value + " " + dataStorage[i].name + ". Precio por unidad: $" + dataStorage[i].precioProducto + "\n"
-
       sumatoriaTotalProductos +=
         parseInt(dataStorage[i].value) * dataStorage[i].precioProducto;
     }
     mensajeGenerado += "\n TOTAL: $" + sumatoriaTotalProductos;
 
-
-  Swal.fire({
-    title:  mensajeGenerado,
-    showDenyButton: true,
-    showCancelButton: true,
-    confirmButtonText: 'Comprar',
-    denyButtonText: `Seguir comprando`,
-  }).then((result) => {
-    /* Read more about isConfirmed, isDenied below */
-    if (result.isConfirmed) {
-      Swal.fire('Gracias por su compra');
-    } else if (result.isDenied) {
-      Swal.fire("¡A seguir comprando!")
-    }
-  })}
+    Swal.fire({
+      title: mensajeGenerado,
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Comprar',
+      denyButtonText: `Seguir comprando`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire('¡Gracias por su compra!');
+        localStorage.removeItem("carrito");
+        ARRAY_PRODUCTOS = [];
+      } else if (result.isDenied) {
+        Swal.fire("¡A seguir comprando!")
+      }
+    })
+  }
 }
