@@ -7,9 +7,11 @@ let cremHidra = document.getElementById("input_cremahidratante");
 let protectSolar = document.getElementById("input_protectorsolar");
 let vaciarChanguito = document.getElementById("id_vaciarChanguito");
 let verChanguito = document.getElementById("id_verChanguito");
+let comprarChanguito = document.getElementById("id_comprar")
 
 vaciarChanguito.addEventListener("click", vaciarchango);
 verChanguito.addEventListener("click", verProductosEnChanguito);
+comprarChanguito.addEventListener("click", comprarLosProductos);
 
 //botones DOM
 let botonLimpiador = document.getElementById("id_limpiador");
@@ -155,4 +157,40 @@ function verProductosEnChanguito() {
       },
     });
   }
+}
+
+
+
+function comprarLosProductos() {
+  dataStorage = JSON.parse(localStorage.getItem("carrito"));
+  
+  if (dataStorage !== null) {
+    let sumatoriaTotalProductos = 0;
+    let mensajeGenerado = "Comprar los siguientes productos:\n";
+
+    for (let i = 0; i < dataStorage.length; i++) {
+
+
+      mensajeGenerado += "\n" + dataStorage[i].value + " " + dataStorage[i].name + ". Precio por unidad: $" + dataStorage[i].precioProducto + "\n"
+
+      sumatoriaTotalProductos +=
+        parseInt(dataStorage[i].value) * dataStorage[i].precioProducto;
+    }
+    mensajeGenerado += "\n TOTAL: $" + sumatoriaTotalProductos;
+
+
+  Swal.fire({
+    title:  mensajeGenerado,
+    showDenyButton: true,
+    showCancelButton: true,
+    confirmButtonText: 'Comprar',
+    denyButtonText: `Seguir comprando`,
+  }).then((result) => {
+    /* Read more about isConfirmed, isDenied below */
+    if (result.isConfirmed) {
+      Swal.fire('Gracias por su compra');
+    } else if (result.isDenied) {
+      Swal.fire("¡A seguir comprando!")
+    }
+  })}
 }
