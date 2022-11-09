@@ -1,47 +1,100 @@
-//variables HTML DOM
-let limpiador = document.getElementById("input_limpiador");
-let exfoliante = document.getElementById("input_exfoliante");
-let tonico = document.getElementById("input_tonico");
-let serum = document.getElementById("input_serum");
-let cremHidra = document.getElementById("input_cremahidratante");
-let protectSolar = document.getElementById("input_protectorsolar");
-let vaciarChanguito = document.getElementById("id_vaciarChanguito");
-let verChanguito = document.getElementById("id_verChanguito");
-let comprarChanguito = document.getElementById("id_comprar")
+class Producto {
+  constructor(nombre, descripcion, precio, cantidad, imagen) {
+    this.nombre = nombre;
+    this.descripcion = descripcion;
+    this.precio = precio;
+    this.cantidad = cantidad;
+    this.imagen = imagen;
+  }
+}
 
-vaciarChanguito.addEventListener("click", vaciarchango);
-verChanguito.addEventListener("click", verProductosEnChanguito);
-comprarChanguito.addEventListener("click", comprarLosProductos);
-
-//botones DOM
-let botonLimpiador = document.getElementById("id_limpiador");
-botonLimpiador.addEventListener("click", agregarChanguito);
-
-let botonExfoliante = document.getElementById("id_exfoliante");
-botonExfoliante.addEventListener("click", agregarChanguito);
-
-let botonTonico = document.getElementById("id_tonico");
-botonTonico.addEventListener("click", agregarChanguito);
-
-let botonSerum = document.getElementById("id_serum");
-botonSerum.addEventListener("click", agregarChanguito);
-
-let botonCremaHidra = document.getElementById("id_cremahidratante");
-botonCremaHidra.addEventListener("click", agregarChanguito);
-
-let botonProtectorSolar = document.getElementById("id_protectorsolar");
-botonProtectorSolar.addEventListener("click", agregarChanguito);
-
-//variables precios productos
-let precioLimpiador = 1240;
-let precioExfoliante = 1120;
-let precioTonico = 1450;
-let precioSerum = 1050;
-let precioCremaHidra = 1400;
-let precioProtectSol = 2500;
+let productos = [
+  new Producto(
+    "Limpiador Facial",
+    "Loción Limpiadora Cetaphil Para Piel Grasa X 237 Ml.",
+    1240,
+    0,
+    "../img/limpiador.png"
+  ),
+  new Producto("Exfoliante", "Energizing Exfoliante Deep Clean 100 Gr.", 1120, 0, "../img/exfoliante.png"),
+  new Producto("Tonico", "Leche Y Tónico Micelar Nivea Rose Care 2 En 1 X 200 Ml.", 1450, 0, "../img/tonico.png"),
+  new Producto("Serum", "Acf By Dadatina Serum Humectante Vol 1 Balance Refill X 30ml Tipo De Piel Todo Tipo De Piel.", 1050, 0, "../img/serum.png"),
+  new Producto(
+    "Crema Hidratante",
+    "Gel Neutrogena Hydro Boost water gel día/noche para piel seca de 1.7oz.",
+    1400,
+    0,
+    "../img/crema-hidratante.png"
+  ),
+  new Producto(
+    "Protector Solar",
+    "Protector solar Eucerin Sensitive Protect FPS 50 Sun en crema de 50 mL.",
+    2500,
+    0,
+    "../img/protector-solar.png"
+  ),
+];
 
 //array que carga los productos seleccionados
 let ARRAY_PRODUCTOS = [];
+
+let contenedorProductos = document.getElementById("contenedor-productos");
+
+for (let index = 0; index < productos.length; index++) {
+  contenedorProductos.innerHTML += `
+  <div class="card col m-1" style="width: 18rem">
+  <img src=${productos[index].imagen} loading="lazy" class="card-img-top" 
+    alt="${productos[index].nombre} />
+  <div class="card-body">
+    <h5 class="card-title">${productos[index].nombre}</h5>
+    <p class="card-text">${productos[index].descripcion}</p>
+    <p class="importe">${productos[index].precio}</p>
+    <p>Seleccione cantidad</p>
+    <form action="">
+      <input type="number" value="0" min="0"name=${productos[index].nombre} id=product-cant-${index} class="input_boton" />
+      <button id="product-button-${index}" class="btn btn-light" type="reset">
+        Agregar al carrito
+      </button>
+    </form>
+  </div>
+  </div>`;
+}
+
+for (let index = 0; index < productos.length; index++) {
+  document
+    .getElementById(`product-button-${index}`)
+    .addEventListener("click", function () {
+      agregarACarrito(index);
+    });
+}
+
+function agregarACarrito(id) {
+  let cantidad = document.getElementById(`product-cant-${id}`).value;
+  if (cantidad > 0) {
+    // if (ARRAY_PRODUCTOS.some((x) => x.nombre == productos[id].nombre)) {
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "Oops...",
+    //     text: "Ya tiene ese producto en el carrito, no puede volver a agregarlo.",
+    //   });
+    //   return;
+    // }
+
+    productos[id].cantidad += parseInt(cantidad);
+
+    ARRAY_PRODUCTOS.push(productos[id]);
+    localStorage.setItem("carrito", JSON.stringify(ARRAY_PRODUCTOS));
+    mostarMensajeProductoAgregado(productos[id].nombre);
+  }
+}
+
+let vaciarChanguito = document.getElementById("id_vaciarChanguito");
+let verChanguito = document.getElementById("id_verChanguito");
+let comprarChanguito = document.getElementById("id_comprar");
+
+vaciarChanguito.addEventListener("click", vaciarchango);
+verChanguito.addEventListener("click", verProductosEnChanguito);
+comprarChanguito.addEventListener("click", comprarProductos);
 
 //------------------------------------------------------//
 
@@ -51,56 +104,12 @@ if (dataStorage !== null) {
   verProductosEnChanguito();
 }
 
-//clase que pasa nombre y precio de cada producto
-class Producto {
-  constructor(name, value, precioProducto) {
-    this.name = name;
-    this.value = value;
-    this.precioProducto = precioProducto;
-  }
-}
-
-// funcion crear producto con push al array
-const crearProducto = (name, value, precioProducto) => {
-  let producto = new Producto(name, value, precioProducto);
-
-  if (ARRAY_PRODUCTOS.some((x) => x.name == producto.name)) {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Ya tiene ese producto en el carrito, no puede volver a agregarlo.",
-    });
-    return;
-  }
-
-  ARRAY_PRODUCTOS.push(producto);
-  localStorage.setItem("carrito", JSON.stringify(ARRAY_PRODUCTOS));
-  mostarMensajeProductoAgregado(producto.name);
-};
-
-//funcion agregar changuito
-function agregarChanguito() {
-  if (limpiador.value > 0) {
-    crearProducto(limpiador.name, limpiador.value, precioLimpiador);
-  } else if (exfoliante.value > 0) {
-    crearProducto(exfoliante.name, exfoliante.value, precioExfoliante);
-  } else if (tonico.value > 0) {
-    crearProducto(tonico.name, tonico.value, precioTonico);
-  } else if (serum.value > 0) {
-    crearProducto(serum.name, serum.value, precioSerum);
-  } else if (cremHidra.value > 0) {
-    crearProducto(cremHidra.name, cremHidra.value, precioCremaHidra);
-  } else if (protectSolar.value > 0) {
-    crearProducto(protectSolar.name, protectSolar.value, precioProtectSol);
-  }
-}
-
 //Sweet Alert "agregado al carrito"
-function mostarMensajeProductoAgregado(nombreProducto) {
+function mostarMensajeProductoAgregado(nombre) {
   Swal.fire({
     position: "top-end",
     icon: "success",
-    title: "Se ha agregado " + nombreProducto + " al carrito",
+    title: "Se ha agregado " + nombre + " al carrito",
     showConfirmButton: false,
     timer: 2000,
   });
@@ -114,7 +123,11 @@ function vaciarchango() {
     Swal.fire({
       icon: "error",
       title: "Se ha vaciado el carrito",
-      text: "0 productos en el carrito",
+    });
+  } else {
+    Swal.fire({
+      icon: "error",
+      title: "No hay elementos en su carrito",
     });
   }
 }
@@ -128,12 +141,17 @@ function verProductosEnChanguito() {
     let mensajeGenerado = "Tu carrito tiene:\n";
 
     for (let i = 0; i < dataStorage.length; i++) {
-
-
-      mensajeGenerado += "\n" + dataStorage[i].value + " " + dataStorage[i].name + ". Precio por unidad: $" + dataStorage[i].precioProducto + "\n"
+      mensajeGenerado +=
+        "\n" +
+        dataStorage[i].cantidad +
+        " " +
+        dataStorage[i].nombre +
+        ". Precio por unidad: $" +
+        dataStorage[i].precio +
+        "\n";
 
       sumatoriaTotalProductos +=
-        parseInt(dataStorage[i].value) * dataStorage[i].precioProducto;
+        parseInt(dataStorage[i].cantidad) * dataStorage[i].precio;
     }
     mensajeGenerado += "\n TOTAL: $" + sumatoriaTotalProductos;
 
@@ -159,19 +177,39 @@ function verProductosEnChanguito() {
   }
 }
 
-
 //Comprar
-function comprarLosProductos() {
+
+function comprarProductos() {
   dataStorage = JSON.parse(localStorage.getItem("carrito"));
+
+  if (dataStorage === null) {
+    Swal.fire({
+      title: "Primero debe seleccionar los productos a comprar",
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    });
+    return;
+  }
 
   if (dataStorage !== null) {
     let sumatoriaTotalProductos = 0;
     let mensajeGenerado = "Comprar los siguientes productos:\n";
 
     for (let i = 0; i < dataStorage.length; i++) {
-      mensajeGenerado += "\n" + dataStorage[i].value + " " + dataStorage[i].name + ". Precio por unidad: $" + dataStorage[i].precioProducto + "\n"
+      mensajeGenerado +=
+        "\n" +
+        dataStorage[i].cantidad +
+        " " +
+        dataStorage[i].nombre +
+        ". Precio por unidad: $" +
+        dataStorage[i].precio +
+        "\n";
       sumatoriaTotalProductos +=
-        parseInt(dataStorage[i].value) * dataStorage[i].precioProducto;
+        parseInt(dataStorage[i].cantidad) * dataStorage[i].precio;
     }
     mensajeGenerado += "\n TOTAL: $" + sumatoriaTotalProductos;
 
@@ -179,17 +217,17 @@ function comprarLosProductos() {
       title: mensajeGenerado,
       showDenyButton: true,
       showCancelButton: true,
-      confirmButtonText: 'Comprar',
+      confirmButtonText: "Comprar",
       denyButtonText: `Seguir comprando`,
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        Swal.fire('¡Gracias por su compra!');
+        Swal.fire("¡Gracias por su compra!");
         localStorage.removeItem("carrito");
         ARRAY_PRODUCTOS = [];
       } else if (result.isDenied) {
-        Swal.fire("¡A seguir comprando!")
+        Swal.fire("¡A seguir comprando!");
       }
-    })
+    });
   }
 }
