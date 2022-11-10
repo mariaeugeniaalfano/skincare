@@ -1,3 +1,4 @@
+//Clase parametros productos
 class Producto {
   constructor(nombre, descripcion, precio, cantidad, imagen) {
     this.nombre = nombre;
@@ -8,6 +9,7 @@ class Producto {
   }
 }
 
+//Informacion de productos
 let productos = [
   new Producto(
     "Limpiador Facial",
@@ -40,6 +42,7 @@ let ARRAY_PRODUCTOS = [];
 
 let contenedorProductos = document.getElementById("contenedor-productos");
 
+//Visualización de productos en DOM
 for (let index = 0; index < productos.length; index++) {
   contenedorProductos.innerHTML += `
   <div class="card col m-1" style="width: 18rem">
@@ -60,6 +63,7 @@ for (let index = 0; index < productos.length; index++) {
   </div>`;
 }
 
+//Agregar al carrito
 for (let index = 0; index < productos.length; index++) {
   document
     .getElementById(`product-button-${index}`)
@@ -71,15 +75,14 @@ for (let index = 0; index < productos.length; index++) {
 function agregarACarrito(id) {
   let cantidad = document.getElementById(`product-cant-${id}`).value;
   if (cantidad > 0) {
-    // if (ARRAY_PRODUCTOS.some((x) => x.nombre == productos[id].nombre)) {
-    //   Swal.fire({
-    //     icon: "error",
-    //     title: "Oops...",
-    //     text: "Ya tiene ese producto en el carrito, no puede volver a agregarlo.",
-    //   });
-    //   return;
-    // }
-
+    if (ARRAY_PRODUCTOS.some((x) => x.nombre == productos[id].nombre)) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Ya tiene ese producto en el carrito, no puede volver a agregarlo.",
+      });
+      return;
+    }
     productos[id].cantidad += parseInt(cantidad);
 
     ARRAY_PRODUCTOS.push(productos[id]);
@@ -88,6 +91,7 @@ function agregarACarrito(id) {
   }
 }
 
+//Botones "comprar, ver, borrar carrito"
 let vaciarChanguito = document.getElementById("id_vaciarChanguito");
 let verChanguito = document.getElementById("id_verChanguito");
 let comprarChanguito = document.getElementById("id_comprar");
@@ -96,7 +100,6 @@ vaciarChanguito.addEventListener("click", vaciarchango);
 verChanguito.addEventListener("click", verProductosEnChanguito);
 comprarChanguito.addEventListener("click", comprarProductos);
 
-//------------------------------------------------------//
 
 //STORAGE
 let dataStorage = JSON.parse(localStorage.getItem("carrito"));

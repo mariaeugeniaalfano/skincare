@@ -29,6 +29,14 @@
   background-image: url(../img/img-header2.png);
 }
 
+.ir {
+  font-size: 1.5rem;
+}
+.ir:hover {
+  font-size: 2rem;
+  transition: font-size 0.4s;
+}
+
 .container__paso-a-paso {
   height: 200px;
   margin: auto;
@@ -141,6 +149,10 @@ button {
 
 .importe {
   font-size: 2rem;
+}
+
+#id_comprar:hover {
+  background-color: #c9a0dc;
 }
 
 body {

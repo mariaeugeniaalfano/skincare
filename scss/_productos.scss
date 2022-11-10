@@ -58,3 +58,9 @@ margin: 10px 0;
 .importe {
   font-size: 2rem;
 }
+
+#id_comprar{
+  &:hover{
+    background-color: #c9a0dc;
+  }
+}
