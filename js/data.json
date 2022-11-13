@@ -1,0 +1,38 @@
+[
+  {
+    "nombre": "Limpiador Facial",
+    "descripcion": "Loción Limpiadora Cetaphil Para Piel Grasa X 237 Ml.",
+    "precio": 1240,
+    "imagen": "../img/limpiador.png"
+  },
+  {
+    "nombre": "Exfoliante",
+    "descripcion": "Energizing Exfoliante Deep Clean 100 Gr.",
+    "precio": 1120,
+    "imagen": "../img/exfoliante.png"
+  },
+  {
+    "nombre": "Tonico",
+    "descripcion": "Leche Y Tónico Micelar Nivea Rose Care 2 En 1 X 200 Ml.",
+    "precio": 1450,
+    "imagen": "../img/tonico.png"
+  },
+  {
+    "nombre": "Serum",
+    "descripcion": "Acf By Dadatina Serum Humectante Vol 1 Balance Refill X 30ml Tipo De Piel Todo Tipo De Piel.",
+    "precio": 1050,
+    "imagen": "../img/serum.png"
+  },
+  {
+    "nombre": "Crema Hidratante",
+    "descripcion": "Gel Neutrogena Hydro Boost water gel día/noche para piel seca de 1.7oz.",
+    "precio": 1400,
+    "imagen": "../img/crema-hidratante.png"
+  },
+  {
+    "nombre": "Protector Solar",
+    "descripcion": "Protector solar Eucerin Sensitive Protect FPS 50 Sun en crema de 50 mL.",
+    "precio": 2500,
+    "imagen": "../img/protector-solar.png"
+  }
+]
